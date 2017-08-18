@@ -1,0 +1,21 @@
+table `user` already exists, skip
+table `profile` already exists, skip
+[ORM]2017/08/18 11:09:04  -[Queries/default] - [  OK /     db.Exec /     1.7ms] - [INSERT INTO `profile` (`age`) VALUES (?)] - `30`
+[ORM]2017/08/18 11:09:04  -[Queries/default] - [  OK /     db.Exec /     0.8ms] - [INSERT INTO `user` (`name`, `profile_id`) VALUES (?, ?)] - `tom`, `4`
+[ORM]2017/08/18 11:09:04  -[Queries/default] - [FAIL /     db.Exec /     0.1ms] - [INSERT INTO `profile` (`id`, `age`) VALUES (?, ?)] - `4`, `30` - Error 1062: Duplicate entry '4' for key 'PRIMARY'
+[ORM]2017/08/18 11:09:04  -[Queries/default] - [FAIL /     db.Exec /     0.1ms] - [INSERT INTO `user` (`id`, `name`, `profile_id`) VALUES (?, ?, ?)] - `4`, `tom`, `4` - Error 1062: Duplicate entry '4' for key 'PRIMARY'
+[ORM]2017/08/18 11:09:04  -[Queries/default] - [FAIL /     db.Exec /     0.1ms] - [INSERT INTO `profile` (`id`, `age`) VALUES (?, ?)] - `4`, `30` - Error 1062: Duplicate entry '4' for key 'PRIMARY'
+[ORM]2017/08/18 11:09:04  -[Queries/default] - [FAIL /     db.Exec /     0.1ms] - [INSERT INTO `user` (`id`, `name`, `profile_id`) VALUES (?, ?, ?)] - `4`, `tom`, `4` - Error 1062: Duplicate entry '4' for key 'PRIMARY'
+[ORM]2017/08/18 11:09:04  -[Queries/default] - [  OK /     db.Exec /     0.8ms] - [UPDATE `user` SET `name` = ?, `profile_id` = ? WHERE `id` = ?] - `hezhixiong`, `4`, `4`
+NUM: 1, ERR: <nil>
+[ORM]2017/08/18 11:09:04  -[Queries/default] - [  OK /     db.Exec /     0.1ms] - [DELETE FROM `user` WHERE `id` = ?] - `2`
+2017/08/18 11:09:04 [1;34m[I] [asm_amd64.s:2337] http server Running on http://:80[0m
+2017/08/18 11:09:21 [1;44m[D] [server.go:2619] |  183.211.78.85|[42m 200 [0m|  70.325684ms|   match|[44m GET     [0m /     r:/[0m
+2017/08/18 11:09:21 [1;44m[D] [server.go:2619] |  183.211.78.85|[42m 200 [0m|    101.927µs|   match|[44m GET     [0m /static/js/reload.min.js[0m
+2017/08/18 11:09:23 [1;44m[D] [server.go:2619] |  183.211.78.85|[42m 200 [0m|  71.359729ms|   match|[44m GET     [0m /     r:/[0m
+2017/08/18 11:09:23 [1;44m[D] [server.go:2619] |  183.211.78.85|[42m 200 [0m|      39.21µs|   match|[44m GET     [0m /static/js/reload.min.js[0m
+2017/08/18 11:09:29 [1;44m[D] [server.go:2619] |  183.211.78.85|[42m 200 [0m|   2.864469ms|   match|[44m GET     [0m /     r:/[0m
+2017/08/18 11:09:38 [1;44m[D] [server.go:2619] |  183.211.78.85|[42m 200 [0m|    443.137µs|   match|[44m GET     [0m /greguser   r:/greguser[0m
+2017/08/18 11:09:38 [1;44m[D] [server.go:2619] |  183.211.78.85|[42m 200 [0m|  68.809698ms|   match|[44m GET     [0m /static/js/jquery-3.2.1.js[0m
+2017/08/18 11:09:38 [1;44m[D] [server.go:2619] |  120.77.52.189|[42m 200 [0m|  68.475116ms|   match|[44m GET     [0m /static/js/jquery-3.2.1.js[0m
+2017/08/18 11:09:40 [1;44m[D] [server.go:2619] |  183.211.78.85|[43m 404 [0m|    218.663µs| nomatch|[44m GET     [0m /favicon.ico[0m
